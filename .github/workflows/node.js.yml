@@ -29,4 +29,7 @@ jobs:
     - run: npm install --global yarn
     - run: yarn
     - run: yarn build
-    
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: dist
