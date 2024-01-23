@@ -1,9 +1,29 @@
 .section {
-    background-color: rgba($color: #242424, $alpha: 1);
-    font-size: 18px;
-    margin-top: 4px;
-    padding: 24px;
-    border-radius: 24px;
-    display: flex;
+  background-color: rgba($color: #242424, $alpha: 1);
+  font-size: 18px;
+  margin-top: 4px;
+  padding: 24px;
+  border-radius: 24px;
+  display: flex;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 0 24px 4px rgba($color: #242424, $alpha: 1);
+    background-color: rgba($color: #1b1b1b, $alpha: 1);
+    margin: 4px 0;
+    z-index: 4;
   }
   
+  @media (prefers-color-scheme: light) {
+    &:hover {
+      background-color: rgba($color: #e3e3e3, $alpha: 1);
+      box-shadow: 0 0 24px 4px rgba($color: #242424, $alpha: 0.2);
+    }
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .section {
+    background-color: rgba($color: #f2f2f2, $alpha: 1);
+  }
+}

@@ -7,6 +7,6 @@ export default function LinkAirX() {
             color: Color.accent('primary'),
             fontSize: '18px',
             textDecoration: 'underline',
-        }} href="airx.html">AirX</Link>
+        }} href="#airx-video">AirX</Link>
     </div>
 }

@@ -15,16 +15,6 @@ export default function Footer() {
             <Typography level="h3" color="primary">
                 This portfolio is built with React, TypeScript, Vite, and JoyUI.
             </Typography>
-
-            <Stack direction="row" sx={{ mt: 2 }}>
-                <Button
-                    variant="soft"
-                    size="sm"
-                    onClick={handleToggle}
-                >
-                    Current Theme: {mode}. Click to toggle.
-                </Button>
-            </Stack>
         </Box>
     </>
 }

@@ -5,3 +5,10 @@
     padding: 12px;
     border-radius: 24px;
 }
+
+@media (prefers-color-scheme: light) {
+    .header {
+      background-color: rgba($color: #dddddd, $alpha: 1);
+    }
+  }
+  

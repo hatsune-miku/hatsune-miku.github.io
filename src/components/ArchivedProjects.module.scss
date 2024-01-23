@@ -1,0 +1,29 @@
+@use "Vars" as *;
+
+.tab {
+    border-radius: 4px 4px 18px 18px;
+    margin-top: 12px;
+
+    [class*="JoyTab-root"][class*="Mui-selected"] {
+        background-color: transparent !important;
+        color: $lovely-blue;
+    }
+
+    [class*="MuiTabPanel-root"] {
+        color: $neutral-text-light;
+    }
+    
+    button {
+        color: $neutral-text-light;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        [class*="MuiTabPanel-root"] {
+            color: $neutral-text-dark;
+        }
+
+        button {
+            color: $neutral-text-dark;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+@use "Vars" as *;
+
+.svg {
+    fill: $neutral-text-dark;
+    width: 20px;
+    height: 20px;
+    opacity: 0.5;
+}
+
+@media (prefers-color-scheme: light) {
+    .svg {
+        fill: $neutral-text-light;
+    }
+}

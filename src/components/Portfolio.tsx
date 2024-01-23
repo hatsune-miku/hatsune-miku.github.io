@@ -1,14 +1,35 @@
 import styles from './Portfolio.module.scss'
 import sharedStyles from "./Shared.module.scss"
-import { Button, Card, Divider, Link, Stack, Typography } from '@mui/joy';
+import { Button, Card, Divider, Link, Stack, Typography, useColorScheme } from '@mui/joy';
 import Color from '../utils/color'
 import { Download, Email, VideoLibrary } from '@mui/icons-material';
 import useIsMobile from '../utils/is_mobile';
+import { useState } from 'react';
+import useDarkMode from '../utils/is_darkmode';
 
 function Portfolio() {
     const divider = <Divider sx={{ width: '12px' }} orientation="vertical" />
     const colorSecondary = Color.accent("neutral")
     const isMobile = useIsMobile()
+    const isDarkMode = useDarkMode()
+    const { mode } = useColorScheme()
+    const [shouldToggleName, setShouldToggleName] = useState(false)
+
+    function handleToggleName() {
+        setShouldToggleName(!shouldToggleName)
+    }
+
+    function handleDownloadResume() {
+        window.open("brian-resume.pdf")
+    }
+
+    function handleNavigateToContactInfo() {
+        window.location.href = "#contact-info"
+    }
+
+    function handleViewAirXVideo() {
+        window.location.href = "#airx-video"
+    }
 
     return (
         <Stack
@@ -24,7 +45,9 @@ function Portfolio() {
                     level="h1"
                     color="primary"
                 >
-                    👋Hi, I'm <Link sx={{ textDecoration: 'underline' }}>Brian</Link>.
+                    👋Hi, I'm <Link sx={{ textDecoration: 'underline' }} onClick={handleToggleName}>
+                        {shouldToggleName ? "Full Stack Dev" : "Brian"}
+                    </Link>.
                 </Typography>
 
                 <Card className={styles.iam}>
@@ -36,11 +59,11 @@ function Portfolio() {
                         </tbody>
                     </table>
                     <Stack direction="row" spacing={1}>
-                        <Button color="primary" startDecorator={<Download />}>
+                        <Button color="primary" startDecorator={<Download />} onClick={handleDownloadResume}>
                             Resumé
                         </Button>
 
-                        <Button color="neutral" startDecorator={<Email />}>
+                        <Button color="neutral" startDecorator={<Email />} onClick={handleNavigateToContactInfo}>
                             Email
                         </Button>
                     </Stack>
@@ -48,7 +71,7 @@ function Portfolio() {
             </Stack>
 
             <Stack direction="column">
-                <Typography level="h3" color="primary">
+                <Typography level="h3" color="primary" sx={{ color: Color.text(isDarkMode) }}>
                     As a
                     <span style={{ color: colorSecondary }}> new grad </span>
                     with a Master's degree in Computer Engineering,
@@ -56,14 +79,14 @@ function Portfolio() {
                     <span style={{ color: colorSecondary }}> 16 years </span>
                     in IT-related areas, specializing in various
                     mainstream
-                    <span style={{ color: colorSecondary }}> front-end, middle-tier, and back-end </span>
+                    <span style={{ color: colorSecondary }}> frontend and backend </span>
                     frameworks
                     and technologies.
                 </Typography>
 
                 <br />
 
-                <Typography level="h3" color="primary">
+                <Typography level="h3" color="primary" sx={{ color: Color.text(isDarkMode) }}>
                     Recently, I led a team of 4 to develop
                     <span style={{ color: colorSecondary }}> AirX, a better AirDrop </span>
                     - copy and paste across Windows, macOS & Linux! Please feel free to
@@ -72,13 +95,13 @@ function Portfolio() {
                 <br />
 
                 <Stack direction="row" alignItems="center">
-                    <Button size="lg" startDecorator={<VideoLibrary />}>
+                    <Button size="lg" startDecorator={<VideoLibrary />} onClick={handleViewAirXVideo}>
                         Watch AirX Demo Video
                     </Button>
                 </Stack>
             </Stack>
         </Stack>
-    );
+    )
 }
 
 export default Portfolio

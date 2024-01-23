@@ -11,12 +11,18 @@ export default function Education() {
             <table>
                 <tbody>
                     <tr>
-                        <td>September 2021 - August 2023</td>
-                        <td>MASc in Computer Engineering @ Memorial University of Newfoundland</td>
+                        <td>Sept 2021 - Aug 2023<br /> &#x3000;</td>
+                        <td>
+                            <b>MASc in Computer Engineering</b> <br />
+                            @ Memorial University of Newfoundland
+                        </td>
                     </tr>
                     <tr>
-                        <td>September 2017 - August 2021</td>
-                        <td>Bachelor of Computer Science @ Capital Normal University</td>
+                        <td>Sept 2017 - Aug 2021<br /> &#x3000;</td>
+                        <td>
+                            <b>Bachelor of Computer Science</b> <br />
+                            @ Capital Normal University
+                        </td>
                     </tr>
                 </tbody>
             </table>

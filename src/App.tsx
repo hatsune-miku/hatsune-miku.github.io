@@ -1,4 +1,4 @@
-import { Box, Stack } from '@mui/joy'
+import { Box, Stack, useColorScheme } from '@mui/joy'
 import './App.css'
 import Header from './components/Header'
 
@@ -7,8 +7,18 @@ import Footer from './components/Footer'
 import ContactInfo from './components/ContactInfo'
 import Projects from './components/Projects'
 import Education from './components/Education'
+import ArchivedProjects from './components/ArchivedProjects'
+import { useEffect } from 'react'
+import useDarkMode from './utils/is_darkmode'
 
 function App() {
+  const isDarkMode = useDarkMode()
+  const { mode, setMode } = useColorScheme()
+
+  // Sync dark mode with MUI
+  useEffect(() => {
+    setMode(isDarkMode ? 'dark' : 'light')
+  }, [mode, isDarkMode, setMode])
 
   return (
     <Box sx={{ display: 'flex' }} alignContent="center" justifyContent="center">
@@ -19,6 +29,7 @@ function App() {
         <Portfolio />
         <Education />
         <Projects />
+        <ArchivedProjects />
         <ContactInfo />
         <Footer />
       </Stack>
