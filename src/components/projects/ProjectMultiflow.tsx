@@ -34,7 +34,7 @@ export default function ProjectMultiflow() {
             </ListItem>
             <ListItem>
                 <ListItemDecorator><GitHub /></ListItemDecorator>
-                <Link>Source code currently unavailable due to copyright issues</Link>
+                <Link href="https://github.com/2284650586/Multiflow">Github Repo</Link>
             </ListItem>
         </List>
     </>
