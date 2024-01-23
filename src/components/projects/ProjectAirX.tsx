@@ -59,6 +59,10 @@ export default function ProjectAirX() {
             </ListItem>
             <ListItem>
                 <ListItemDecorator><GitHub /></ListItemDecorator>
+                <Link href="https://github.com/hatsune-miku/libairx">libairx</Link>
+            </ListItem>
+            <ListItem>
+                <ListItemDecorator><GitHub /></ListItemDecorator>
                 <Link href="https://github.com/hatsune-miku/AirX-win">Windows Client (WinUI 3)</Link>
             </ListItem>
             <ListItem>
