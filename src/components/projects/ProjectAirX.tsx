@@ -1,7 +1,5 @@
 import { GitHub } from "@mui/icons-material";
 import { Divider, Link, List, ListItem, ListItemDecorator, Typography } from "@mui/joy";
-import Color from "../../utils/color";
-import useDarkMode from "../../utils/is_darkmode";
 import Markdown from "react-markdown";
 import sharedStyles from "./MarkdownShared.module.scss"
 
@@ -24,8 +22,6 @@ further protect token data.
 `
 
 export default function ProjectAirX() {
-    const isDarkMode = useDarkMode()
-
     return <>
         <Typography level="h3" color="primary">
             AirX - A cross-platform text and file sharing system

@@ -1,7 +1,6 @@
 import sharedStyles from "./Shared.module.scss"
 import styles from "./Projects.module.scss"
 import { Box, Tab, TabList, TabPanel, Tabs, Typography } from "@mui/joy"
-import useIsMobile from "../utils/is_mobile"
 import ProjectAirX from "./projects/ProjectAirX"
 import ProjectDircrypt from "./projects/ProjectDircrypt"
 import ProjectPortalCheat from "./projects/ProjectPortalCheat"
@@ -9,8 +8,6 @@ import ProjectChatgptRelay from "./projects/ProjectChatgptRelay"
 import ProjectMss2 from "./projects/ProjectMSS2"
 
 export default function Projects() {
-    const isMobile = useIsMobile()
-
     return <>
         <Box className={sharedStyles.section} sx={{
             flexDirection: 'column',

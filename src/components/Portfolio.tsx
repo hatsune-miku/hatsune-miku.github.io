@@ -1,6 +1,6 @@
 import styles from './Portfolio.module.scss'
 import sharedStyles from "./Shared.module.scss"
-import { Button, Card, Divider, Link, Stack, Typography, useColorScheme } from '@mui/joy';
+import { Button, Card, Divider, Link, Stack, Typography } from '@mui/joy';
 import Color from '../utils/color'
 import { Download, Email, VideoLibrary } from '@mui/icons-material';
 import useIsMobile from '../utils/is_mobile';
@@ -12,7 +12,6 @@ function Portfolio() {
     const colorSecondary = Color.accent("neutral")
     const isMobile = useIsMobile()
     const isDarkMode = useDarkMode()
-    const { mode } = useColorScheme()
     const [shouldToggleName, setShouldToggleName] = useState(false)
 
     function handleToggleName() {

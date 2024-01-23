@@ -1,7 +1,5 @@
 import { GitHub } from "@mui/icons-material";
-import { Divider, Link, List, ListItem, ListItemDecorator, Stack, Typography } from "@mui/joy";
-import Color from "../../utils/color";
-import useDarkMode from "../../utils/is_darkmode";
+import { Divider, Link, List, ListItem, ListItemDecorator, Typography } from "@mui/joy";
 import Markdown from "react-markdown";
 import sharedStyles from "./MarkdownShared.module.scss"
 

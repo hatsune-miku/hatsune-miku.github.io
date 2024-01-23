@@ -1,12 +1,10 @@
 import sharedStyles from "./Shared.module.scss"
 import styles from "./ArchivedProjects.module.scss"
 import { Box, Tab, TabList, TabPanel, Tabs, Typography } from "@mui/joy"
-import useIsMobile from "../utils/is_mobile"
 import ProjectMultiflow from "./projects/ProjectMultiflow"
 import ProjectMikuWeather from "./projects/ProjectMikuWeather"
 
 export default function ArchivedProjects() {
-    const isMobile = useIsMobile()
     return <>
         <Box className={sharedStyles.section} sx={{
             flexDirection: 'column',
