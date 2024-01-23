@@ -4,6 +4,9 @@
     font-size: 18px;
     padding: 12px;
     border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (prefers-color-scheme: light) {
