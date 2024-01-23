@@ -2,6 +2,7 @@ import { GitHub } from "@mui/icons-material";
 import { Divider, Link, List, ListItem, ListItemDecorator, Typography } from "@mui/joy";
 import Markdown from "react-markdown";
 import sharedStyles from "./MarkdownShared.module.scss"
+import Color from "../../utils/color";
 
 const copyWriting = `
 Multiflow is a multiphase flow transient simulator written in Qt and C++.
@@ -34,7 +35,9 @@ export default function ProjectMultiflow() {
             </ListItem>
             <ListItem>
                 <ListItemDecorator><GitHub /></ListItemDecorator>
-                <Link href="https://github.com/2284650586/Multiflow">Github Repo</Link>
+                <Link sx={{
+                    color: Color.accent("neutral"),
+                }} href="https://github.com/2284650586/Multiflow">Github Repo</Link>
             </ListItem>
         </List>
     </>

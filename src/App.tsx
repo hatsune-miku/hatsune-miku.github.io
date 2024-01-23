@@ -5,11 +5,11 @@ import Header from './components/Header'
 import Portfolio from './components/Portfolio'
 import Footer from './components/Footer'
 import ContactInfo from './components/ContactInfo'
-import Projects from './components/Projects'
 import Education from './components/Education'
 import ArchivedProjects from './components/ArchivedProjects'
 import { useEffect } from 'react'
 import useDarkMode from './utils/is_darkmode'
+import ActiveProjects from './components/ActiveProjects'
 
 function App() {
   const isDarkMode = useDarkMode()
@@ -28,7 +28,7 @@ function App() {
         <Header />
         <Portfolio />
         <Education />
-        <Projects />
+        <ActiveProjects />
         <ArchivedProjects />
         <ContactInfo />
         <Footer />

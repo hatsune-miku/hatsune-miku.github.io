@@ -45,7 +45,7 @@ function Portfolio() {
                     color="primary"
                 >
                     👋Hi, I'm <Link sx={{ textDecoration: 'underline' }} onClick={handleToggleName}>
-                        {shouldToggleName ? "Full Stack Dev" : "Brian"}
+                        {shouldToggleName ? "Brian" : "Brian"}
                     </Link>.
                 </Typography>
 

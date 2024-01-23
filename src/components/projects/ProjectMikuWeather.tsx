@@ -2,6 +2,7 @@ import { GitHub } from "@mui/icons-material";
 import { Divider, Link, List, ListItem, ListItemDecorator, Typography } from "@mui/joy";
 import Markdown from "react-markdown";
 import sharedStyles from "./MarkdownShared.module.scss"
+import Color from "../../utils/color";
 
 const copyWriting = `
 Markdown test
@@ -31,7 +32,9 @@ export default function ProjectMikuWeather() {
             </ListItem>
             <ListItem>
                 <ListItemDecorator><GitHub /></ListItemDecorator>
-                <Link>Github Repo</Link>
+                <Link sx={{
+                    color: Color.accent("neutral"),
+                }}>Github Repo</Link>
             </ListItem>
         </List>
     </>

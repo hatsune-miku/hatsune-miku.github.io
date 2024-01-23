@@ -1,13 +1,78 @@
 import sharedStyles from "./Shared.module.scss"
-import styles from "./Projects.module.scss"
-import { Box, Tab, TabList, TabPanel, Tabs, Typography } from "@mui/joy"
-import ProjectAirX from "./projects/ProjectAirX"
-import ProjectDircrypt from "./projects/ProjectDircrypt"
-import ProjectPortalCheat from "./projects/ProjectPortalCheat"
-import ProjectChatgptRelay from "./projects/ProjectChatgptRelay"
-import ProjectMss2 from "./projects/ProjectMSS2"
+import { Box, Dropdown, Menu, MenuButton, MenuItem, Stack, Tab, TabList, TabPanel, Tabs, Typography } from "@mui/joy"
 
-export default function Projects() {
+import useIsMobile from "../utils/is_mobile"
+import { Apps } from "@mui/icons-material"
+import { useState } from "react"
+
+type ProjectMap = {
+    [key: string]: () => JSX.Element
+}
+
+type ProjectPageConfig = {
+    projectMap: ProjectMap,
+    title: string,
+    tabClassName: string,
+}
+
+export default function Projects(props: ProjectPageConfig) {
+    const isMobile = useIsMobile()
+    const projects = Object.keys(props.projectMap)
+    const [didFinishedTutorial, setDidFinishedTutorial] = useState(false)
+    const [selectedProject, setSelectedProject] = useState(projects[0])
+    let projectNavigation = null
+
+    if (isMobile) {
+        projectNavigation = <Stack direction="column" spacing={2} sx={{
+            p: 2,
+        }}>
+            <Dropdown>
+                <MenuButton startDecorator={<Apps />} variant="outlined" size="lg">
+                    {
+                        didFinishedTutorial
+                            ? selectedProject
+                            : `Switch project (${projects.length} total)`
+                    }
+                </MenuButton>
+                <Menu>
+                    {
+                        projects.map((p) =>
+                            <MenuItem selected={selectedProject === p} onClick={() => {
+                                setSelectedProject(p)
+                                setDidFinishedTutorial(true)
+                            }}>
+                                {p}
+                            </MenuItem>
+                        )
+                    }
+                </Menu>
+            </Dropdown>
+            {props.projectMap[selectedProject]()}
+        </Stack>
+    }
+    else {
+        projectNavigation =
+            <Tabs
+                defaultValue={0}
+                className={props.tabClassName}
+                orientation="vertical"
+            >
+                <TabList>
+                    {projects.map((p) => <Tab key={p}>{p}</Tab>)}
+                </TabList>
+
+                {
+                    projects.map((p, i) =>
+                        <TabPanel key={p} value={i}>
+                            {
+                                props.projectMap[p]()
+                            }
+                        </TabPanel>
+                    )
+                }
+            </Tabs>
+    }
+
     return <>
         <Box className={sharedStyles.section} sx={{
             flexDirection: 'column',
@@ -16,42 +81,9 @@ export default function Projects() {
             <Typography level="h1" color="primary" sx={{
                 padding: '24px 24px 0 24px'
             }}>
-                Active Projects
+                {props.title}
             </Typography>
-
-            <Tabs
-                defaultValue={0}
-                className={styles.tab}
-                orientation="vertical"
-            >
-                <TabList>
-                    <Tab>AirX</Tab>
-                    <Tab>dircrypt.py</Tab>
-                    <Tab>Portal2 Cheat</Tab>
-                    <Tab>ChatGPTRelay</Tab>
-                    <Tab>MSS2</Tab>
-                </TabList>
-
-                <TabPanel value={0}>
-                    <ProjectAirX />
-                </TabPanel>
-
-                <TabPanel value={1}>
-                    <ProjectDircrypt />
-                </TabPanel>
-
-                <TabPanel value={2}>
-                    <ProjectPortalCheat />
-                </TabPanel>
-
-                <TabPanel value={3}>
-                    <ProjectChatgptRelay />
-                </TabPanel>
-
-                <TabPanel value={4}>
-                    <ProjectMss2 />
-                </TabPanel>
-            </Tabs>
+            {projectNavigation}
         </Box>
     </>
 }
