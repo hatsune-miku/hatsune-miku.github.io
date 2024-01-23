@@ -13,12 +13,12 @@ import ActiveProjects from './components/ActiveProjects'
 
 function App() {
   const isDarkMode = useDarkMode()
-  const { mode, setMode } = useColorScheme()
+  const { setMode } = useColorScheme()
 
   // Sync dark mode with MUI
   useEffect(() => {
     setMode(isDarkMode ? 'dark' : 'light')
-  }, [mode, isDarkMode, setMode])
+  }, [isDarkMode, setMode])
 
   return (
     <Box sx={{ display: 'flex' }} alignContent="center" justifyContent="center">

@@ -4,7 +4,7 @@
     border-radius: 4px 4px 18px 18px;
     margin-top: 12px;
 
-    [class*="JoyTab-root"][class*="Mui-selected"] {
+    [class*="Mui-selected"] {
         background-color: transparent !important;
         color: $lovely-pink;
     }
