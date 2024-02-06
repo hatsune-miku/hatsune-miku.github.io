@@ -8,11 +8,11 @@ import ContactInfo from './components/ContactInfo'
 import Education from './components/Education'
 import ArchivedProjects from './components/ArchivedProjects'
 import { useEffect } from 'react'
-import useDarkMode from './utils/is_darkmode'
 import ActiveProjects from './components/ActiveProjects'
+import useSystemDarkMode from './utils/is_darkmode'
 
 function App() {
-  const isDarkMode = useDarkMode()
+  const isDarkMode = useSystemDarkMode()
   const { setMode } = useColorScheme()
 
   // Sync dark mode with MUI

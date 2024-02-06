@@ -1,10 +1,9 @@
 import styles from './Portfolio.module.scss'
 import sharedStyles from "./Shared.module.scss"
-import { Button, Card, Divider, Link, Stack, Typography } from '@mui/joy';
+import { Button, Card, Divider, Stack, Typography } from '@mui/joy';
 import Color from '../utils/color'
 import { Download, Email, VideoLibrary } from '@mui/icons-material';
 import useIsMobile from '../utils/is_mobile';
-import { useState } from 'react';
 import useDarkMode from '../utils/is_darkmode';
 
 function Portfolio() {
@@ -12,11 +11,6 @@ function Portfolio() {
     const colorSecondary = Color.accent("neutral")
     const isMobile = useIsMobile()
     const isDarkMode = useDarkMode()
-    const [shouldToggleName, setShouldToggleName] = useState(false)
-
-    function handleToggleName() {
-        setShouldToggleName(!shouldToggleName)
-    }
 
     function handleDownloadResume() {
         window.open("brian-resume.pdf")
@@ -44,9 +38,7 @@ function Portfolio() {
                     level="h1"
                     color="primary"
                 >
-                    👋Hi, I'm <Link sx={{ textDecoration: 'underline' }} onClick={handleToggleName}>
-                        {shouldToggleName ? "Brian" : "Brian"}
-                    </Link>.
+                    👋Hi, I'm Brian.
                 </Typography>
 
                 <Card className={styles.iam}>

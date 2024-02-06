@@ -6,10 +6,12 @@ import ProjectMss2 from "./projects/ProjectMSS2"
 import Projects from "./Projects"
 
 import styles from "./ActiveProjects.module.scss"
+import ProjectNG2 from "./projects/ProjectNG2"
 
 export default function ActiveProjects() {
     const projectMap = {
         "AirX": () => <ProjectAirX />,
+        "NG2": () => <ProjectNG2 />,
         "dircrypt.py": () => <ProjectDircrypt />,
         "Portal2 Cheat": () => <ProjectPortalCheat />,
         "ChatGPTRelay": () => <ProjectChatgptRelay />,
