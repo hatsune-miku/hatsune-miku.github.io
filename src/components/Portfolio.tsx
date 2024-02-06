@@ -1,6 +1,6 @@
 import styles from './Portfolio.module.scss'
 import sharedStyles from "./Shared.module.scss"
-import { Button, Card, Divider, Stack, Typography } from '@mui/joy';
+import { Button, Card, Chip, Divider, Stack, Typography } from '@mui/joy';
 import Color from '../utils/color'
 import { Download, Email, VideoLibrary } from '@mui/icons-material';
 import useIsMobile from '../utils/is_mobile';
@@ -13,7 +13,7 @@ function Portfolio() {
     const isDarkMode = useDarkMode()
 
     function handleDownloadResume() {
-        window.open("brian-resume.pdf")
+        window.open("brian-resume-fullstack.pdf")
     }
 
     function handleNavigateToContactInfo() {
@@ -31,8 +31,8 @@ function Portfolio() {
             divider={divider}
         >
             <Stack direction="column" sx={{
-                minWidth: '320px',
-                width: '320px',
+                minWidth: '420px',
+                width: '420px',
             }}>
                 <Typography
                     level="h1"
@@ -41,12 +41,48 @@ function Portfolio() {
                     👋Hi, I'm Brian.
                 </Typography>
 
-                <Card className={styles.iam}>
+                <Card className={styles.iam} variant="outlined">
                     <table>
-                        <tbody>
-                            <tr><td>- Full Stack Dev</td></tr>
-                            <tr><td>- Android/iOS Native Dev</td></tr>
-                            <tr><td>- Flutter/RN</td></tr>
+                        <tbody style={{ fontSize: '14px' }}>
+                            <tr><td><Typography level="h4">I am</Typography></td></tr>
+                            <tr><td>
+                                - <Chip>Full Stack</Chip> Developer
+                            </td></tr>
+                            <tr><td>
+                                - <Chip>
+                                    <i className={`${styles.icon} fa-brands fa-android`} />
+                                    Android
+                                </Chip> /&nbsp;
+                                <Chip>
+                                    <i className={`${styles.icon} fa-brands fa-apple`} />
+                                    iOS
+                                </Chip> Native Developer
+                            </td></tr>
+                            <tr><td>
+                                - <Chip>
+                                    <img src="flutter_logo.svg" style={{ width: '12px', margin: '0 4px' }} />
+                                    Flutter
+                                </Chip> /&nbsp;
+                                <Chip>
+                                    <i className={`${styles.icon} fa-brands fa-react`} />
+                                    React Native
+                                </Chip> Developer
+
+                            </td></tr>
+                            <tr><td>
+                                - <Chip>
+                                    <img src="xposed.svg" style={{ width: '12px', margin: '0 4px' }} />
+                                    Xposed Modules
+                                </Chip> Developer
+                            </td></tr>
+                            <tr><td>
+                                - <Chip>
+                                    <i className={`${styles.icon} fa-brands fa-windows`} />
+                                    Windows KMDF
+                                </Chip> Developer
+                            </td></tr>
+                            <tr><td>- <b>Programming Enthusiast</b></td></tr>
+                            <tr><td>- <b style={{ color: '#39c5bb' }}>Hatsune Miku</b> Fan</td></tr>
                         </tbody>
                     </table>
                     <Stack direction="row" spacing={1}>
@@ -63,6 +99,12 @@ function Portfolio() {
 
             <Stack direction="column">
                 <Typography level="h3" color="primary" sx={{ color: Color.text(isDarkMode) }}>
+                    "I like to say that every computer and smartphone is a friend of mine."
+                </Typography>
+
+                <br />
+
+                <Typography level="h3" color="primary" sx={{ color: Color.text(isDarkMode) }}>
                     As a
                     <span style={{ color: colorSecondary }}> new grad </span>
                     with a Master's degree in Computer Engineering,
@@ -71,8 +113,7 @@ function Portfolio() {
                     in IT-related areas, specializing in various
                     mainstream
                     <span style={{ color: colorSecondary }}> frontend and backend </span>
-                    frameworks
-                    and technologies.
+                    frameworks and technologies.
                 </Typography>
 
                 <br />
