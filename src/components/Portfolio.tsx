@@ -31,8 +31,8 @@ function Portfolio() {
             divider={divider}
         >
             <Stack direction="column" sx={{
-                minWidth: '420px',
-                width: '420px',
+                minWidth: isMobile ? '280px' : '380px',
+                width: isMobile ? '280px' : '380px',
             }}>
                 <Typography
                     level="h1"
@@ -41,7 +41,12 @@ function Portfolio() {
                     👋Hi, I'm Brian.
                 </Typography>
 
-                <Card className={styles.iam} variant="outlined">
+                <Card style={{
+                    padding: isMobile ? '24px 18px' : '24px',
+                    borderRadius: '24px',
+                    width: '320px',
+                    margin: isMobile ? '12px 0 12px -12px' : '12px 0',
+                }} variant="outlined">
                     <table>
                         <tbody style={{ fontSize: '14px' }}>
                             <tr><td><Typography level="h4">I am</Typography></td></tr>

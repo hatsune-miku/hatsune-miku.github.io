@@ -13,6 +13,7 @@ type ProjectPageConfig = {
     projectMap: ProjectMap,
     title: string,
     tabClassName: string,
+    isPink: boolean,
 }
 
 export default function Projects(props: ProjectPageConfig) {
@@ -27,7 +28,12 @@ export default function Projects(props: ProjectPageConfig) {
             p: 2,
         }}>
             <Dropdown>
-                <MenuButton startDecorator={<Apps />} variant="outlined" size="lg">
+                <MenuButton
+                    startDecorator={<Apps />}
+                    variant="solid"
+                    color={props.isPink ? "primary" : "neutral"}
+                    size="lg"
+                >
                     {
                         didFinishedTutorial
                             ? selectedProject

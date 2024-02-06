@@ -13,5 +13,6 @@ export default function ArchivedProjects() {
         projectMap={projectMap}
         title="Archived / Old Projects"
         tabClassName={styles.tab}
+        isPink={false}
     />
 }

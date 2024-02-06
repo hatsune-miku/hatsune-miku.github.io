@@ -21,5 +21,6 @@ export default function ActiveProjects() {
         projectMap={projectMap}
         title="Active Projects"
         tabClassName={styles.tab}
+        isPink
     />
 }
