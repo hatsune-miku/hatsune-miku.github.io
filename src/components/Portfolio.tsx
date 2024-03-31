@@ -111,22 +111,18 @@ function Portfolio() {
 
                 <Typography level="h3" color="primary" sx={{ color: Color.text(isDarkMode) }}>
                     As a
-                    <span style={{ color: colorSecondary }}> new grad </span>
-                    with a Master's degree in Computer Engineering,
-                    however, I have explored and practiced for
-                    <span style={{ color: colorSecondary }}> 16 years </span>
-                    in IT-related areas, specializing in various
-                    mainstream
-                    <span style={{ color: colorSecondary }}> frontend and backend </span>
-                    frameworks and technologies.
+                    <span style={{ color: colorSecondary }}> tech enthusiate </span>
+                    and a current contract project lead for a company, I'm actively looking for
+                    <span style={{ color: colorSecondary }}> part-time or full-time opportunities </span>
+                    in Canada.
                 </Typography>
 
                 <br />
 
                 <Typography level="h3" color="primary" sx={{ color: Color.text(isDarkMode) }}>
-                    Recently, I led a team of 4 to develop
-                    <span style={{ color: colorSecondary }}> AirX, a better AirDrop </span>
-                    - copy and paste across Windows, macOS & Linux! Please feel free to
+                    Last year, I led a team of 4 to develop <span style={{ color: colorSecondary }}>
+                        🪄 AirX - copy and paste across Windows, macOS & Linux!
+                    </span>
                 </Typography>
 
                 <br />
