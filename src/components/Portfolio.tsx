@@ -113,8 +113,7 @@ function Portfolio() {
                     As a
                     <span style={{ color: colorSecondary }}> tech enthusiate </span>
                     and a current contract project lead for a company, I'm actively looking for
-                    <span style={{ color: colorSecondary }}> part-time or full-time opportunities </span>
-                    in Canada.
+                    <span style={{ color: colorSecondary }}> part-time or full-time opportunities.</span>
                 </Typography>
 
                 <br />
