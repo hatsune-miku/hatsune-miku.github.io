@@ -1,9 +1,9 @@
 import { Box, Stack, useColorScheme } from "@mui/joy"
-import "./App.css"
 import Header from "./components/Header"
 
 import { useEffect } from "react"
 import useSystemDarkMode from "./utils/is_darkmode"
+import "./App.css"
 
 function App() {
   const isDarkMode = useSystemDarkMode()

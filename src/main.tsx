@@ -1,10 +1,10 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
 import App from "./App.tsx"
-import "./index.css"
 
-import "@fontsource/inter"
 import { CssVarsProvider, StyledEngineProvider, extendTheme } from "@mui/joy"
+import "@fontsource/inter"
+import "./index.css"
 
 const theme = extendTheme({
   colorSchemes: {
